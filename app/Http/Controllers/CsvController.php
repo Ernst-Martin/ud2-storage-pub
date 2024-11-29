@@ -32,7 +32,7 @@ class CsvController extends Controller
             return response()->json(['mensaje' => 'El fichero ya existe'], 409);
         }
 
-        Storage::put($filename, $content);
+        Storage::put("app/$filename", $content);
 
         return response()->json(['mensaje' => 'Guardado con éxito'], 200);
     }
